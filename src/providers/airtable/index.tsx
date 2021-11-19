@@ -56,6 +56,7 @@ export const fromAirtable: DesignTokenProvider<FromAirtableProps> = async (props
     /**
      * Iterate over propFields and read the values from the retrieved records.
      */
+    delete record.fields[tokenField];
     Object.assign(designTokenProps, record.fields);
     /**
      * Push the parsed designToken.
