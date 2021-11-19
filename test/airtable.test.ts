@@ -1,3 +1,4 @@
+import 'isomorphic-fetch'
 import { fromAirtable } from '../src/providers/airtable'
 
 const apiKey = process.env.AIRTABLE_KEY ?? "";
@@ -8,7 +9,8 @@ describe('Airtable provider', () => {
     const tokens = await fromAirtable({
       apiKey,
       base,
-      table: "Icons",
+      view: "Icons",
+      table: "icons",
       tokenField: "iconXIDd",
       propFields: ["icon", "vector"],
     });
